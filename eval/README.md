@@ -11,21 +11,21 @@ VoQA Benchmark is a comprehensive benchmark for Visual-only Question Answering (
 * Evaluation of open-source models on traditional VQA datasets
 * API-based evaluation of closed-source models on traditional VQA datasets
 * Response filtering and accuracy calculation based on existing inference results
-* Evaluation of Question-Alignment Fine-Tuning models for Question Alignment Accuracy (QAA)
+* Evaluation of Question-Alignment Fine-Tuning models for **Question Alignment Accuracy (QAA)**
 
 ## Quick Start
 
 ### 1. Dataset Preparation
 
-1. Download the evaluation datasets: [Hidden here]
+**Step 1:** Download the evaluation datasets from 🤗Hugging Face: [AJN-AI/VoQA](https://huggingface.co/datasets/AJN-AI/VoQA)
 
-Scripts for only downloading the test split are available.
+Scripts for only downloading the test split are available at Hugging Face.
 
-2. Modify the `EVAL_DIR` parameter in the main scripts to point to your dataset root directory
+**Step 2:** Modify the `EVAL_DIR` parameter in the main scripts to point to your evaluation datasets root directory.
 
-### 2. Model and Environment Setup (Open-source Models Only)
+### 2. Model and Environment Setup
 
-The project includes the following pre-configured models:
+**For open source models**, the project includes the following pre-configured models:
 
 * TinyLLaVA\_Factory: TinyLLaVA-Phi-2-SigLIP-3.1B, TinyLLaVA-Qwen2-0.5B-SigLIP, TinyLLaVA-Qwen2.5-3B-SigLIP
 * LLaVA: llava-v1.5-7b, llava-1.5-7b-hf
@@ -50,6 +50,11 @@ conda activate tinyllava_factory
 pip install --upgrade pip  # enable PEP 660 support
 pip install -e .
 pip install flash-attn --no-build-isolation
+```
+
+**For all models, You need to install some necessary packages in your environment. Run the following command in the root directory:**
+```Shell
+pip install -r requirements.txt
 ```
 
 ### 3. Evaluation Process
@@ -122,108 +127,6 @@ eval
 └── scripts_for_voqa_api/                       # VoQA API evaluation scripts
 ```
 
-## Dataset Structure
-
-### VoQA Benchmark
-
-The VoQA evaluation dataset includes the following tasks:
-
-* GQA
-* POPE
-* ScienceQA
-* TextVQA
-* VQAv2
-
-Each task contains three data formats:
-
-* Concatenation method (with resizing)
-* Concatenation method (without resizing)
-* Watermark rendering
-
-```Plain
-VoQA_eval/                                      # VoQA evaluation dataset
-├── gqa/                                        ########## GQA task ##########
-│   ├── eval/                                   # 'eval' folder in original GQA dataset
-│   ├── gqa_concat_with_resizing_image/         # concatenation method with resizing dataset folder of GQA task
-│   │   ├── 2012597/                            # image id in original GQA task
-│   │   │   ├── d.jpg                           # bottom concatenation with resizing image
-│   │   │   ├── l.jpg                           # left concatenation with resizing image
-│   │   │   ├── r.jpg                           # right concatenation with resizing image
-│   │   │   └── u.jpg                           # top concatenation with resizing image
-│   │   ├── 2012660/
-│   │   ├── ...
-│   │   └── 202287013/
-│   ├── gqa_concat_without_resizing_image/      # concatenation method without resizing dataset folder of GQA task
-│   │   └── ...                                 # the same structure to concatenation method with resizing
-│   ├── gqa_watermark_rendering_image/          # watermark rendering dataset folder of GQA task
-│   │   ├── 2012597.jpg                         # watermark rendering image
-│   │   ├── 2012660.jpg
-│   │   ├── ...
-│   │   └── 202287013.jpg
-│   ├── images/                                 # 'images' folder in original GQA dataset (Used for traditional VQA evaluation)
-│   ├── llava_gqa_testdev_balanced.jsonl        # jsonl in original GQA dataset
-│   └── testdev_balanced_questions.json         # json in original GQA dataset
-├── pope/                                       ########## POPE task ##########
-│   ├── coco/                                   # 'coco' folder in original POPE dataset
-│   ├── llava_pope_test.jsonl                   # jsonl in original POPE dataset
-│   ├── pope_concat_with_resizing_image/
-│   ├── pope_concat_without_resizing_image/
-│   ├── pope_watermark_rendering_image/
-│   └── val2014/                                # 'val2014' folder in original POPE dataset (Used for traditional VQA evaluation)
-├── scienceqa/                                  ########## SQA task ##########
-│   ├── images/                                 # 'images' folder in original SQA dataset (Used for traditional VQA evaluation)
-│   ├── llava_test_CQM-A_selected_mm.jsonl      # from jsonl in original SQA dataset, but selected part of images
-│   ├── pid_splits_selected.json                # from json in original SQA dataset, but selected part of images
-│   ├── problems.json                           # json in original SQA dataset
-│   ├── scienceqa_concat_with_resizing_image/
-│   ├── scienceqa_concat_without_resizing_image/
-│   └── scienceqa_watermark_rendering_image/
-├── textvqa/                                                            ########## TextVQA task ##########
-│   ├── TextVQA_0.5.1_val_new_id.json                                   # from jsonl in original TextVQA dataset, but make the image id non-repetitive
-│   ├── llava_textvqa_val_v051_ocr_new_id_without_ocr_reference.jsonl   # from jsonl in original TextVQA dataset, but make the image id non-repetitive and remove the ocr references
-│   ├── textvqa_concat_with_resizing_image/
-│   ├── textvqa_concat_without_resizing_image/
-│   ├── textvqa_watermark_rendering_image/
-│   └── train_images/                           # 'train_images' folder in original TextVQA dataset (Used for traditional VQA evaluation)
-└── vqav2/                                      ########## VQAv2 task ##########
-    ├── llava_vqav2_mscoco_test-dev2015.jsonl   # jsonl in original VQAv2 dataset
-    ├── test2015/                               # 'test2015' folder in original VQAv2 dataset (Used for traditional VQA evaluation)
-    ├── vqav2_concat_with_resizing_image/
-    ├── vqav2_concat_without_resizing_image/
-    └── vqav2_watermark_rendering_image/
-```
-
-### VoQA Training Dataset
-
-```Plain
-VoQA_train/                                      # VoQA train dataset         
-├── concat_with_resizing_image/                  # concatenation method with resizing image folder of train dataset
-│   ├── 000000000009/                            # image id in VoQA train dataset                        
-│   │   ├── prompt_1_d.jpg                       # bottom concatenation with resizing image of prompt 1
-│   │   ├── prompt_1_l.jpg                       # left concatenation with resizing image of prompt 1
-│   │   ├── prompt_1_r.jpg                       # right concatenation with resizing image of prompt 1
-│   │   ├── prompt_1_u.jpg                       # top concatenation with resizing image of prompt 1
-│   │   ├── prompt_2_d.jpg
-│   │   ├── prompt_2_l.jpg
-│   │   ├── ...
-│   │   └── prompt_4_u.jpg
-│   ├── 000000000009_2/
-│   ├── ...
-│   └── VG_100K_8-2/
-├── concat_without_resizing_image/               # concatenation method without resizing image folder of train dataset
-│   └── ...                                      # the same structure to concatenation method with resizing
-├── watermark_rendering_image/                   # watermark rendering image folder of train dataset
-│   ├── 000000000009/                            # image id in VoQA train dataset                        
-│   │   ├── prompt_1.jpg                         # watermark rendering image of prompt 1
-│   │   ├── prompt_2.jpg
-│   │   ├── prompt_3.jpg
-│   │   └── prompt_4.jpg
-│   ├── 000000000009_2/
-│   ├── ...
-│   └── VG_100K_8-2/
-└── Voqa_3_3M.jsonl                              # jsonl for VoQA training
-```
-
 ## Adding New Models
 
 To add a new model for evaluation, follow these steps:
@@ -264,10 +167,3 @@ To analyze the Question Alignment Accuracy (QAA) of models fine-tuned with the Q
 bash scripts_for_result_analysis/analyse_main_all.sh
 ```
 
-## License
-
-[To be added]
-
-## Citation
-
-[To be added]

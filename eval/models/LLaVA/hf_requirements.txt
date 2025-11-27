@@ -1,0 +1,9 @@
+transformers
+torch
+torchvision
+shortuuid
+sentencepiece
+protobuf
+google
+accelerate
+flash-attn

@@ -1,6 +1,6 @@
-# VoQA: Visual-only Question Answering
+# VoQA Benchamark
 
-## Project Overview
+## Overview
 
 VoQA Benchmark is a comprehensive benchmark for Visual-only Question Answering (VoQA) that provides a unified evaluation framework for both open-source and closed-source models. This project integrates evaluation logic for various datasets and models, allowing for **efficient batch evaluation through simple parameter modifications**.
 

@@ -21,7 +21,7 @@
 为了解决这个问题，我们研究了问题对齐微调策略，旨在指导模型在推理之前对齐视觉问题。下面是*Baseline-SFT (VQA, VoQA)* 、 *QA-SFT (VoQA)* 和 *QRA-SFT (VoQA)* 的区别：
 
 <p align="center">
-    <img src="./assets/four SFT.jpg" width="750">
+    <img src="./assets/four SFT.jpg" width="900">
 </p>
 
 ## 快速开始

@@ -21,7 +21,7 @@ The *VoQA task* poses substantial challenges for current LVLMs, which show clear
 To address this, we investigate question-alignment fine-tuning strategies designed to guide models toward interpreting the visual question prior to reasoning. Here is the difference between *Baseline-SFT (VQA, VoQA)*, *QA-SFT (VoQA)* and *QRA-SFT (VoQA)*:
 
 <p align="center">
-    <img src="./assets/four SFT.jpg" width="750">
+    <img src="./assets/four SFT.jpg" width="900">
 </p>
 
 ## Quick start

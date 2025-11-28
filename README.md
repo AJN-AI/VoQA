@@ -26,11 +26,11 @@ To address this, we investigate question-alignment fine-tuning strategies design
 
 ## Quick start
 
-**VoQA dataset:** See 🤗 Hugging Face: [AJN-AI/VoQA](https://huggingface.co/datasets/AJN-AI/VoQA)
+* **VoQA dataset:** See 🤗 Hugging Face: [AJN-AI/VoQA](https://huggingface.co/datasets/AJN-AI/VoQA)
 
-**VoQA Benchmark:** For details, please refer to the `./eval` directory. For specific usage methods, please check [./eval/README.md](./eval/README.md).
+* **VoQA Benchmark:** For details, please refer to the `./eval` directory. For specific usage methods, please check [./eval/README.md](./eval/README.md).
 
-**VoQA training code (TinyLLaVA models):** For details, please refer to the `./train` directory. For specific usage methods, please check [./train/README.md](./train/README.md).
+* **VoQA training code (TinyLLaVA models):** For details, please refer to the `./train` directory. For specific usage methods, please check [./train/README.md](./train/README.md).
 
 ## ❤️ Acknowledgement
 * Our whole evaluation codebase is built upon the [TinyLLaVA_Factory](https://github.com/TinyLLaVA/TinyLLaVA_Factory) project. Great work!

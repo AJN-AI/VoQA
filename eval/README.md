@@ -54,7 +54,7 @@ pip install -e .
 pip install flash-attn --no-build-isolation
 ```
 
-**For all models, You need to install some necessary packages in your environment. Run the following command in the root directory:**
+**For all models, You need to install some necessary packages in your environment. Run the following command in the evaluation root directory:**
 ```Shell
 pip install -r requirements.txt
 ```

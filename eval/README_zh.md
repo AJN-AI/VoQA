@@ -50,7 +50,7 @@ pip install -e .
 pip install flash-attn --no-build-isolation
 ```
 
-**对于所有模型，您需要在您的环境中安装一些必要的包。在根目录下执行如下命令：**
+**对于所有模型，您需要在您的环境中安装一些必要的包。在评测脚本根目录下执行如下命令：**
 ```Shell
 pip install -r requirements.txt
 ```

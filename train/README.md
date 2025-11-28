@@ -1,5 +1,7 @@
 ## VoQA training code for TinyLLaVA models (Modified based on TinyLLaVA_Factory):
 
+[ English | [中文](./README_zh.md) ]
+
 This project contains fine-tuning templates for various strategies as well as corresponding scripts. The specific explanations of the relevant parameters have been reflected in each script. Please modify them respectively according to your own situation.
 
 ### Train model on VoQA dataset

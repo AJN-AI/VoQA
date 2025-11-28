@@ -1,5 +1,7 @@
 # VoQA Benchamark
 
+[ English | [中文](./README_zh.md) ]
+
 ## Overview
 
 VoQA Benchmark is a comprehensive benchmark for Visual-only Question Answering (VoQA) that provides a unified evaluation framework for both open-source and closed-source models. This project integrates evaluation logic for various datasets and models, allowing for **efficient batch evaluation through simple parameter modifications**.
@@ -11,7 +13,7 @@ VoQA Benchmark is a comprehensive benchmark for Visual-only Question Answering (
 * Evaluation of open-source models on traditional VQA datasets
 * API-based evaluation of closed-source models on traditional VQA datasets
 * Response filtering and accuracy calculation based on existing inference results
-* Evaluation of Question-Alignment Fine-Tuning models for **Question Alignment Accuracy (QAA)**
+* Evaluation of Question-Alignment Fine-Tuning models for *Question Alignment Accuracy (QAA)*
 
 ## Quick Start
 

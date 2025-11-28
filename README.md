@@ -15,7 +15,7 @@ Visual-only Question Answering (VoQA) is a novel task where a single image conta
 The *VoQA task* poses substantial challenges for current LVLMs, which show clear performance drops even with prompt engineering or OCR assistance compared to traditional VQA.
 
 <p align="center">
-    <img src="./assets/VoQA Benchmark.jpg" width="750">
+    <img src="./assets/VoQA Benchmark.jpg" width="900">
 </p>
 
 To address this, we investigate question-alignment fine-tuning strategies designed to guide models toward interpreting the visual question prior to reasoning. Here is the difference between *Baseline-SFT (VQA, VoQA)*, *QA-SFT (VoQA)* and *QRA-SFT (VoQA)*:
@@ -24,6 +24,11 @@ To address this, we investigate question-alignment fine-tuning strategies design
     <img src="./assets/four SFT.jpg" width="750">
 </p>
 
+## Quick start
+
+**VoQA dataset:** See 🤗 Hugging Face: [AJN-AI/VoQA](https://huggingface.co/datasets/AJN-AI/VoQA)
+**VoQA Benchmark:** For details, please refer to the `./eval` directory. For specific usage methods, please check [./eval/README.md](./eval/README.md).
+**VoQA training code (TinyLLaVA models):** For details, please refer to the `./train` directory. For specific usage methods, please check [./train/README.md](./train/README.md).
 
 ## ❤️ Acknowledgement
 * Our whole evaluation codebase is built upon the [TinyLLaVA_Factory](https://github.com/TinyLLaVA/TinyLLaVA_Factory) project. Great work!

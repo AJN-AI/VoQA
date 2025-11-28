@@ -27,7 +27,9 @@
 ## 快速开始
 
 * **VoQA数据集:** 详见🤗Hugging Face: [AJN-AI/VoQA](https://huggingface.co/datasets/AJN-AI/VoQA)
+
 * **VoQA评测基准:** 详见`./eval`目录，具体使用方法请查看[./eval/README.md](./eval/README.md)
+
 * **VoQA训练代码（TinyLLaVA系列模型）:** 详见`./train`目录，具体使用方法请查看[./train/README.md](./train/README.md)
 
 ## ❤️ 致谢

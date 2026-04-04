@@ -47,9 +47,9 @@
 如果您认为我们的论文、代码或数据集对您的研究有帮助，请考虑留下星星:star:，并引用我们的论文：
 
 ```bibtex
-@article{jiang2025voqa,
+@article{an2025voqa,
   title={VoQA: Visual-only Question Answering},
-  author={Jiang, Luyang and An, Jianing and Luo, Jie and Wu, Wenjun and Huang, Lei},
+  author={An, Jianing and Jiang, Luyang and Luo, Jie and Wu, Wenjun and Huang, Lei},
   journal={arXiv preprint arXiv:2505.14227},
   year={2025}
 }
